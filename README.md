@@ -25,7 +25,7 @@ assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here 
   cream `#F7F4EC`, and the copper `#B07A45` from the logo tagline as the single accent. Flat colour, no gradients.
 - **Fonts**: Cormorant Garamond (display) echoes the serif "NUTRITION & RECOVERY" line in the logo;
   Manrope for body. Their Wix site uses Avenir and Brandon Grotesque, both Wix-licensed and not free.
-- **Logo** recoloured for the hero (cream script, sand tagline) from their PNG. Original colours kept for
+- **Logo** recoloured for the hero (all cream, with a soft radial shade behind it for contrast) from their PNG. Original colours kept for
   light backgrounds, an all-cream version for the footer, and the leaf alone for the nav and favicon.
 - **Sections**: hero → one-line positioning → about Samantha → services as a price list (not icon cards)
   → three-step "how it works" → contact → footer. One primary call to action, repeated three times.
