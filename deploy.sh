@@ -5,4 +5,4 @@ cd "$(dirname "$0")"
 rm -rf .deploy && mkdir -p .deploy
 cp index.html styles.css script.js .deploy/
 cp -r assets .deploy/assets
-npx --yes wrangler@latest pages deploy .deploy --project-name=naturetonurture --branch=main --commit-dirty=true
+npx --yes wrangler@latest pages deploy --branch=main --commit-dirty=true

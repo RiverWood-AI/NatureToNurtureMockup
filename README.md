@@ -98,4 +98,6 @@ excludes `.raw/`. The `deploy.sh` script does this:
 ```
 
 which stages `index.html`, `styles.css`, `script.js` and `assets/` and runs
-`wrangler pages deploy <staged> --project-name=naturetonurture --branch=main`.
+`wrangler pages deploy` against `wrangler.jsonc` (project `naturetonurture`, output dir `.deploy`).
+
+Live: https://naturetonurture.pages.dev/
