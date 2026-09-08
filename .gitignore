@@ -1,0 +1,10 @@
+# full-resolution originals and the Wix stock clip. kept locally, not needed to build or deploy.
+.raw/
+
+# local wrangler cache and deploy staging
+.wrangler/
+.deploy/
+
+.DS_Store
+Thumbs.db
+node_modules/
