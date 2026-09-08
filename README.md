@@ -24,7 +24,7 @@ assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here 
 - **Palette** kept from their existing brand: forest green `#1F4A2E` / `#2B5336`, stone `#E8E5DA`,
   cream `#F7F4EC`, and the copper `#B07A45` from the logo tagline as the single accent. Flat colour, no gradients.
 - **Fonts**: Cormorant Garamond (display) echoes the serif "NUTRITION & RECOVERY" line in the logo;
-  Manrope for body. Their Wix site uses Avenir and Brandon Grotesque, both Wix-licensed and not free.
+  Nunito Sans for body as the closest free match to the Avenir on their Wix site. Their headings use Brandon Grotesque; both are Wix-licensed and not free.
 - **Logo** recoloured for the hero (script and leaf in cream, tagline keeps its gold, soft radial shade behind it for contrast) from their PNG. Original colours kept for
   light backgrounds, an all-cream version for the footer, and the leaf alone for the nav and favicon.
 - **Sections**: hero → one-line positioning → about Samantha → services as a price list (not icon cards)
