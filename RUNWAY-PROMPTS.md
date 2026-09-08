@@ -43,6 +43,22 @@ Negative prompt, if the model version accepts one:
 > people, birds, animals, roads, buildings, water, text, watermark, lens flare, fast motion, camera shake,
 > rotation, zoom, autumn colours, snow, fog covering the trees
 
+## Text-to-video (no still image)
+
+If you would rather Runway generates the footage outright, prompt for a **hover, not a glide**. A hover
+ping-pongs invisibly, because a reversed sway just looks like more sway, and it also hides the fact that
+the landscape and portrait clips are different forests.
+
+> Aerial drone shot hovering almost still above a dense pine and spruce forest canopy, looking down at a
+> slight angle, soft early-morning light. The camera holds position with only a very slow, barely
+> perceptible drift. Treetops sway gently in a light breeze. Deep and mid greens, natural muted colour
+> grade, no autumn colour, gentle mist far in the distance only. No people, animals, roads, buildings,
+> water or text. Calm, continuous, documentary realism.
+
+Generate 16:9 first. If you like it, use a frame from it as the start image for the 9:16 run so the two
+match. Settings: 10 s if offered, camera motion off or minimum, motion strength 2/10, fixed seed reused
+for both, 1080p upscale, no audio. Same negative prompt as above. Loop with the ping-pong method below.
+
 ## Making it loop seamlessly
 
 A forward glide can never loop on its own because the end frame is a different patch of forest from the
