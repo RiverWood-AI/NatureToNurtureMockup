@@ -6,9 +6,16 @@
   const pause = document.getElementById('heroPause');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Glass nav once the hero is scrolled past its first stretch
-  const onScroll = () => nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-  onScroll();
+  // Crossfade the nav from dark glass to cream glass over the first 140px of scroll
+  let ticking = false;
+  const paint = () => {
+    const p = Math.min(1, Math.max(0, (window.scrollY - 20) / 140));
+    nav.style.setProperty('--p', p.toFixed(3));
+    nav.classList.toggle('nav--scrolled', p > 0.5);
+    ticking = false;
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
+  paint();
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // Mobile menu
