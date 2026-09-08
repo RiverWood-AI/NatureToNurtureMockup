@@ -87,7 +87,7 @@ business is invented.
 - **Photo of Samantha** is the one from her "Our Story" page, cropped to 4:5. Ask for a higher-resolution
   original if this goes further (the Wix copy is 989px wide).
 - **No testimonials** anywhere public. If she has any, a short quote after the services section would earn its place.
-- **"Book a call" links to her existing Wix services page** so the mock-up is functional. On a real build
+- **Nothing links to the old Wix site.** The booking buttons go to the contact section. On a real build
   this would be a booking widget or a simple form.
 - The consultation prices were correct as of 8 Sep 2026. Check before publishing.
 
