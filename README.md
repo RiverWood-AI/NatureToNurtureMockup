@@ -25,7 +25,7 @@ assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here 
   cream `#F7F4EC`, and the copper `#B07A45` from the logo tagline as the single accent. Flat colour, no gradients.
 - **Fonts**: Cormorant Garamond (display) echoes the serif "NUTRITION & RECOVERY" line in the logo;
   Manrope for body. Their Wix site uses Avenir and Brandon Grotesque, both Wix-licensed and not free.
-- **Logo** recoloured for the hero (all cream, with a soft radial shade behind it for contrast) from their PNG. Original colours kept for
+- **Logo** recoloured for the hero (script and leaf in cream, tagline keeps its gold, soft radial shade behind it for contrast) from their PNG. Original colours kept for
   light backgrounds, an all-cream version for the footer, and the leaf alone for the nav and favicon.
 - **Sections**: hero → one-line positioning → about Samantha → services as a price list (not icon cards)
   → three-step "how it works" → contact → footer. One primary call to action, repeated three times.
@@ -75,14 +75,17 @@ business is invented.
 | Email | Their site footer and Facebook page |
 | Webheath, Redditch | Their Facebook page "About" |
 | Facebook link | `https://www.facebook.com/profile.php?id=61579757354575` (45 followers) |
-| Logo | Their site, recoloured for the hero |
+| Logo | Their site, recoloured for the hero (script and leaf cream, tagline keeps its gold gradient) |
+| Photo and CMA badge | Their "Our Story" page |
+| "Food-specific IgG antibody test" | What a FoodPrint test is (Cambridge Nutritional Sciences product), not a claim from her site |
+| hs-CRP = high-sensitivity C-reactive protein | Standard name of the test, not from her site |
 
 ## Things worth telling them
 
 - **Their social icons are dead.** The Facebook, Instagram and Pinterest icons on the Wix site link
   to Wix's own accounts, not hers. Only Facebook has been linked here. Ask for Instagram if she has one.
-- **No photo of Samantha exists on the site.** The about section has a placeholder block. A real photo
-  is the single biggest upgrade available.
+- **Photo of Samantha** is the one from her "Our Story" page, cropped to 4:5. Ask for a higher-resolution
+  original if this goes further (the Wix copy is 989px wide).
 - **No testimonials** anywhere public. If she has any, a short quote after the services section would earn its place.
 - **"Book a call" links to her existing Wix services page** so the mock-up is functional. On a real build
   this would be a booking widget or a simple form.
