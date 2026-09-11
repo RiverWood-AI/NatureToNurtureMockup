@@ -15,8 +15,8 @@ styles.css          # all styling
 script.js           # glass nav, mobile menu, hero video selection, scroll reveals, footer year
 assets/logo/        # recoloured logo variants, RiverWood credit logo
 assets/img/         # hero poster frames (placeholders), her photo, CMA badge, three generated section images, favicon
-assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here (see below)
-.raw/               # original logo PNG and the Wix stock clip (gitignored, not deployed)
+assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see below)
+.raw/               # original logo PNG, Wix clip, Pexels originals, generated image PNGs (gitignored, not deployed)
 ```
 
 ## Design decisions
@@ -35,28 +35,20 @@ assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here 
 
 ## Hero video
 
-The current Wix site uses a Wix stock aerial clip of a conifer forest. Wix stock media is licensed for
-use on Wix sites only, so it has not been reused. Until new footage exists, the hero shows a still frame
-from that clip as a **placeholder poster** with a very slow drift. Replace both posters before anything
-goes live.
+Two free Pexels clips (Pexels licence: free for commercial use, no attribution required), graded a touch
+warmer to sit with the gold and sand on the page, ping-ponged so they loop without a cut, and encoded small:
 
-To add video, drop two files into `assets/video/` and nothing else needs to change:
+| File | Source | Treatment |
+| --- | --- | --- |
+| `assets/video/hero-landscape.mp4` | [pexels.com/video/31693356](https://www.pexels.com/video/drone-aerial-view-of-lush-green-forest-canopy-31693356/), oblique glide over dense pine | first 8 s, forward then reverse (16 s loop), 1600×900, 24 fps, H.264 CRF 31 |
+| `assets/video/hero-portrait.mp4` | [pexels.com/video/lush-green-forest-aerial-view-37241773](https://www.pexels.com/video/lush-green-forest-aerial-view-37241773/), top-down drift, 4K source | first 10 s, 9:16 crop from the 4K frame, forward then reverse (20 s loop), 810×1440, 24 fps, H.264 CRF 31 |
 
-| File | Orientation | Target | Notes |
-| --- | --- | --- | --- |
-| `hero-landscape.mp4` | 16:9, 1920×1080 | ≤ 4 MB, 10–20 s | Used when the viewport is landscape (desktop, tablet landscape) |
-| `hero-portrait.mp4` | 9:16, 1080×1920 | ≤ 2.5 MB, 10–20 s | Used when the viewport is portrait (phones, tablet portrait) |
+The page picks landscape or portrait by viewport orientation (see `script.js`), shows the matching poster
+(`assets/img/hero-poster-*.webp`, taken from frame one of each clip) until the video is playing, and skips
+the video entirely under `prefers-reduced-motion`. Originals are kept in `.raw/` (gitignored).
 
-Both must **loop seamlessly** (`loop` is set on the element). H.264, no audio track, `moov` atom at the
-front (`-movflags +faststart`). Suggested encode from a Runway export:
-
-```
-ffmpeg -i runway-landscape.mp4 -an -c:v libx264 -profile:v high -crf 26 -preset slow -pix_fmt yuv420p -movflags +faststart assets/video/hero-landscape.mp4
-ffmpeg -i runway-portrait.mp4  -an -c:v libx264 -profile:v high -crf 27 -preset slow -pix_fmt yuv420p -movflags +faststart assets/video/hero-portrait.mp4
-```
-
-Then export a poster frame from each and overwrite `assets/img/hero-poster-landscape.webp` and
-`hero-poster-portrait.webp`.
+The three Kling / Runway attempts at generating this footage are documented in
+[RUNWAY-PROMPTS.md](RUNWAY-PROMPTS.md) for reference. Stock won.
 
 ### RunwayML prompts
 
