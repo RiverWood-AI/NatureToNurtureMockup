@@ -14,7 +14,7 @@ index.html          # the whole page
 styles.css          # all styling
 script.js           # glass nav, mobile menu, hero video selection, scroll reveals, footer year
 assets/logo/        # recoloured logo variants, RiverWood credit logo
-assets/img/         # hero poster frames (placeholders), favicon
+assets/img/         # hero poster frames (placeholders), her photo, CMA badge, three generated section images, favicon
 assets/video/       # EMPTY. Drop hero-landscape.mp4 and hero-portrait.mp4 here (see below)
 .raw/               # original logo PNG and the Wix stock clip (gitignored, not deployed)
 ```
@@ -77,6 +77,7 @@ business is invented.
 | Facebook link | `https://www.facebook.com/profile.php?id=61579757354575` (45 followers) |
 | Logo | Their site, recoloured for the hero (script and leaf cream, tagline keeps its gold gradient) |
 | Photo and CMA badge | Their "Our Story" page |
+| Flat-lay, herb jars and desk photos | AI-generated (OpenAI gpt-image) for this mock-up. Not hers. Presented as placeholders for real photography of her practice |
 | "Food-specific IgG antibody test" | What a FoodPrint test is (Cambridge Nutritional Sciences product), not a claim from her site |
 | hs-CRP = high-sensitivity C-reactive protein | Standard name of the test, not from her site |
 
