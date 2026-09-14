@@ -66,16 +66,22 @@ start. Three options, best first:
 
 1. **Runway's loop setting.** Some Gen-4 modes include a loop or "extend and loop" toggle. Use it and
    check the join frame by frame.
-2. **Ping-pong.** Play the clip forward then backward. A drone gliding forward then drifting back
-   reads as natural hovering. This is the reliable fallback and looks fine at low motion strength:
+2. **Crossfade loop (what the site uses).** Trim the first `d` seconds off, then dissolve the last `d`
+   seconds of the remainder into that trimmed head. The camera only ever moves one way; on uniform
+   canopy a 2-3 s dissolve is invisible. In ffmpeg, with clip length `L`:
+
+   ```
+   ffmpeg -i clip.mp4 -filter_complex "[0:v]split[a][b];[a]trim=d:L,setpts=PTS-STARTPTS,fps=24,settb=AVTB[m];[b]trim=0:d,setpts=PTS-STARTPTS,fps=24,settb=AVTB[h];[m][h]xfade=transition=fade:duration=d:offset=L-2d[v]" -map "[v]" -an loop.mp4
+   ```
+
+3. **Ping-pong.** Play the clip forward then backward. James found the direction change too visible on
+   a forward glide, so prefer the crossfade. Fine for a hover:
 
    ```
    ffmpeg -i clip.mp4 -filter_complex "[0:v]reverse[r];[0:v][r]concat=n=2:v=1:a=0,setpts=N/FRAME_RATE/TB" -an pingpong.mp4
    ```
 
    Trim one frame from the join if you see a stutter.
-3. **Crossfade.** Overlap the last 1 s onto the first 1 s with a dissolve. Works for slow footage
-   but can show a ghost where trees do not line up.
 
 ## Alternatives worth considering for this kind of site
 

@@ -36,12 +36,12 @@ assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see belo
 ## Hero video
 
 Two free Pexels clips (Pexels licence: free for commercial use, no attribution required), graded a touch
-warmer to sit with the gold and sand on the page, ping-ponged so they loop without a cut, and encoded small:
+warmer to sit with the gold and sand on the page, and looped with a crossfade so the drone only ever flies in one direction: the clip's last few seconds dissolve into its first few, so the loop point is invisible on uniform canopy.
 
 | File | Source | Treatment |
 | --- | --- | --- |
-| `assets/video/hero-landscape.mp4` | [pexels.com/video/31693356](https://www.pexels.com/video/drone-aerial-view-of-lush-green-forest-canopy-31693356/), oblique glide over dense pine | first 8 s, forward then reverse (16 s loop), 1600×900, 24 fps, H.264 CRF 31 |
-| `assets/video/hero-portrait.mp4` | [pexels.com/video/lush-green-forest-aerial-view-37241773](https://www.pexels.com/video/lush-green-forest-aerial-view-37241773/), top-down drift, 4K source | first 10 s, 9:16 crop from the 4K frame, forward then reverse (20 s loop), 810×1440, 24 fps, H.264 CRF 31 |
+| `assets/video/hero-landscape.mp4` | [pexels.com/video/31693356](https://www.pexels.com/video/drone-aerial-view-of-lush-green-forest-canopy-31693356/), oblique glide over dense pine | 2.5 s crossfade loop (7.4 s), 1600×900, 24 fps, H.264 CRF 30 |
+| `assets/video/hero-portrait.mp4` | [pexels.com/video/lush-green-forest-aerial-view-37241773](https://www.pexels.com/video/lush-green-forest-aerial-view-37241773/), top-down drift, 4K source | 9:16 crop from the 4K frame, 3 s crossfade loop (16.8 s), 720×1280, 24 fps, H.264 CRF 34 |
 
 The page picks landscape or portrait by viewport orientation (see `script.js`), shows the matching poster
 (`assets/img/hero-poster-*.webp`, taken from frame one of each clip) until the video is playing, and skips
