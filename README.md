@@ -35,12 +35,11 @@ assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see belo
 
 ## Hero video
 
-Two free Pexels clips (Pexels licence: free for commercial use, no attribution required), graded a touch
-warmer to sit with the gold and sand on the page, and looped with a crossfade so the drone only ever flies in one direction: the clip's last few seconds dissolve into its first few, so the loop point is invisible on uniform canopy.
+Landscape is a generated woodland stream (see RUNWAY-PROMPTS.md for the workflow). Portrait is still a free Pexels drone clip (Pexels licence: free for commercial use, no attribution required), graded a touch warmer. Both loop with a crossfade: the clip's last few seconds dissolve into its first few, so the loop point is invisible.
 
 | File | Source | Treatment |
 | --- | --- | --- |
-| `assets/video/hero-landscape.mp4` | [pexels.com/video/31693356](https://www.pexels.com/video/drone-aerial-view-of-lush-green-forest-canopy-31693356/), oblique glide over dense pine | 2.5 s crossfade loop (7.4 s), 1600×900, 24 fps, H.264 CRF 30 |
+| `assets/video/hero-landscape.mp4` | AI-generated: still from OpenAI gpt-image (`.raw/stream-still-landscape.png`), animated in Kling 3.0 Pro (image-to-video, static camera) | slowed 2.5x with motion interpolation, 3 s crossfade loop (16.9 s), 1600×900, 24 fps, H.264 CRF 24. Forest-drone version kept in `.raw/forest-hero-backup/` |
 | `assets/video/hero-portrait.mp4` | [pexels.com/video/lush-green-forest-aerial-view-37241773](https://www.pexels.com/video/lush-green-forest-aerial-view-37241773/), top-down drift, 4K source | 9:16 crop from the 4K frame, 3 s crossfade loop (16.8 s), 720×1280, 24 fps, H.264 CRF 34 |
 
 The page picks landscape or portrait by viewport orientation (see `script.js`), shows the matching poster

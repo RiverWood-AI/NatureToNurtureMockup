@@ -59,6 +59,17 @@ Generate 16:9 first. If you like it, use a frame from it as the start image for 
 match. Settings: 10 s if offered, camera motion off or minimum, motion strength 2/10, fixed seed reused
 for both, 1080p upscale, no audio. Same negative prompt as above. Loop with the ping-pong method below.
 
+## What finally worked: a woodland stream, image-to-video
+
+The forest canopy never generated well (no subject, no motion). A stream did, first time, in Kling 3.0 Pro:
+
+1. Generate the still with a clear composition brief: falls in the outer third (landscape) or bottom
+   quarter (portrait), calm shaded moss where the logo sits, no sky. Stills are in `.raw/stream-still-*.png`.
+2. Image-to-video with the still as the **first frame only**, a static camera and flowing water.
+3. Kling makes the water run far too fast for a brook. Fix in post: slow 2.5x with motion interpolation
+   (`setpts=2.5*PTS,minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1`), then the
+   crossfade loop below. Water hides the dissolve completely.
+
 ## Making it loop seamlessly
 
 A forward glide can never loop on its own because the end frame is a different patch of forest from the
