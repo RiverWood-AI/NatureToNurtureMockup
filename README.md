@@ -16,6 +16,7 @@ script.js           # glass nav, mobile menu, hero video selection, scroll revea
 assets/logo/        # recoloured logo variants, RiverWood credit logo
 assets/img/         # hero poster frames (placeholders), her photo, CMA badge, three generated section images, favicon
 assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see below)
+tools/maskloop.py   # builds the water-only crossfade loop from a slowed clip
 .raw/               # original logo PNG, Wix clip, Pexels originals, generated image PNGs (gitignored, not deployed)
 ```
 
