@@ -35,12 +35,12 @@ assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see belo
 
 ## Hero video
 
-Landscape is a generated woodland stream (see RUNWAY-PROMPTS.md for the workflow). Portrait is still a free Pexels drone clip (Pexels licence: free for commercial use, no attribution required), graded a touch warmer. Both loop with a crossfade: the clip's last few seconds dissolve into its first few, so the loop point is invisible.
+Both orientations are a generated woodland stream (see RUNWAY-PROMPTS.md for the workflow). Both loop with a crossfade: the clip's last few seconds dissolve into its first few, so the loop point is invisible.
 
 | File | Source | Treatment |
 | --- | --- | --- |
-| `assets/video/hero-landscape.mp4` | AI-generated: still from OpenAI gpt-image (`.raw/stream-still-landscape.png`), animated in Kling 3.0 Pro (image-to-video, static camera) | slowed 2.5x with motion interpolation, 3 s crossfade loop (16.9 s), 1600×900, 24 fps, H.264 CRF 24. Forest-drone version kept in `.raw/forest-hero-backup/` |
-| `assets/video/hero-portrait.mp4` | [pexels.com/video/lush-green-forest-aerial-view-37241773](https://www.pexels.com/video/lush-green-forest-aerial-view-37241773/), top-down drift, 4K source | 9:16 crop from the 4K frame, 3 s crossfade loop (16.8 s), 720×1280, 24 fps, H.264 CRF 34 |
+| `assets/video/hero-landscape.mp4` | AI-generated: still from OpenAI gpt-image (`.raw/stream-still-landscape.png`), animated in Kling 3.0 Pro (image-to-video, static camera) | slowed 2.5x with motion interpolation, 3 s crossfade loop (16.9 s), then **only the water moves**: a temporal-variance mask lets the stream through and holds everything else as a still plate, so leaf shadows cannot jump at the loop. 1600×900, 24 fps, H.264 CRF 24. Forest-drone version kept in `.raw/forest-hero-backup/` |
+| `assets/video/hero-portrait.mp4` | AI-generated: still from OpenAI gpt-image (`.raw/stream-still-portrait-9x16.png`), animated in Kling 3.0 Pro | same treatment, 720×1280, CRF 28 |
 
 The page picks landscape or portrait by viewport orientation (see `script.js`), shows the matching poster
 (`assets/img/hero-poster-*.webp`, taken from frame one of each clip) until the video is playing, and skips
@@ -68,7 +68,7 @@ business is invented.
 | Facebook link | `https://www.facebook.com/profile.php?id=61579757354575` (45 followers) |
 | Logo | Their site, recoloured for the hero (script and leaf cream, tagline keeps its gold gradient) |
 | Photo and CMA badge | Their "Our Story" page |
-| Flat-lay, herb jars and desk photos | AI-generated (OpenAI gpt-image) for this mock-up. Not hers. Presented as placeholders for real photography of her practice |
+| Flat-lay, food banner, herb jars and desk photos | AI-generated (OpenAI gpt-image) for this mock-up. Not hers. Presented as placeholders for real photography of her practice |
 | "Food-specific IgG antibody test" | What a FoodPrint test is (Cambridge Nutritional Sciences product), not a claim from her site |
 | hs-CRP = high-sensitivity C-reactive protein | Standard name of the test, not from her site |
 

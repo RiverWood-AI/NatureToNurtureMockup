@@ -69,6 +69,9 @@ The forest canopy never generated well (no subject, no motion). A stream did, fi
 3. Kling makes the water run far too fast for a brook. Fix in post: slow 2.5x with motion interpolation
    (`setpts=2.5*PTS,minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1`), then the
    crossfade loop below. Water hides the dissolve completely.
+4. Kling also drifts leaves and shadows, which snap back at the loop. Fix: a temporal-variance mask
+   (`scratchpad/maskloop.py` logic, now in the README) so only the water region comes from the video and
+   the rest is a frozen first frame. Use `-t` on the merge; `-loop 1` image inputs otherwise never end.
 
 ## Making it loop seamlessly
 

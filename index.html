@@ -13,7 +13,7 @@
 <meta property="og:image" content="assets/img/hero-poster-landscape.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@400;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@400;600;700&family=Jost:wght@400;500&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -88,7 +88,7 @@
     </figure>
     <div class="about__body">
       <p class="eyebrow">Meet Samantha</p>
-      <h2>A practitioner who has been on the other side of the desk.</h2>
+      <h2>Fifteen years in wellness, and a mum who has been through it herself.</h2>
       <p>I am a qualified Living Nutrition Practitioner with over fifteen years in the wellness industry. I support people of all ages, and I have a particular interest in children's nutrition and nutrition before, during and after pregnancy.</p>
       <p>That interest is personal. I became a mother in May 2020 and experienced first-hand how hard it is for new mums to fit in time for their own health. When my son was unsettled and uncomfortable, and I was told it was "just colic" that he would grow out of, I used my training to find the root cause and improve his symptoms.</p>
       <p>Whatever you or your child are facing, I recommend booking a 15-minute consultation first, and we can discuss any tests or further support needed.</p>
@@ -102,6 +102,10 @@
   </div>
 </section>
 
+<div class="band" aria-hidden="true">
+  <img src="assets/img/food-banner.webp" alt="" width="2000" height="1333" loading="lazy">
+</div>
+
 <section class="services" id="services">
   <div class="wrap">
     <div class="services__head">
@@ -110,31 +114,36 @@
         <h2>Straightforward options, clear prices.</h2>
         <p class="services__lede">Samantha recommends starting with the 15-minute introduction, where you can discuss what is going on and whether a full consultation or a test is the right next step.</p>
       </div>
-      <img class="services__img" src="assets/img/herbs.webp" alt="Three glass jars of dried herbs beside a potted herb on a stone windowsill" width="1000" height="1500" loading="lazy">
     </div>
 
-    <div class="services__group">
-      <h3>Consultations <span>online, by video</span></h3>
+    <div class="services__cards">
+    <article class="card">
+      <h3>Consultations</h3>
+      <p class="card__sub">Online, by video</p>
       <ul class="pricelist">
         <li><div><strong>15-minute introduction consultation</strong><small>A first conversation to discuss what support or tests you might need.</small></div><data value="20">&pound;20</data></li>
         <li><div><strong>Personalised consultation</strong><small>A personalised nutrition and recovery consultation, held online.</small></div><data value="70">&pound;70</data></li>
         <li><div><strong>Consultation for a child under 18</strong><small>A personalised consultation for children and teenagers.</small></div><data value="60">&pound;60</data></li>
         <li><div><strong>Follow-up consultation</strong><small>A follow-up to a personalised consultation.</small></div><data value="40">&pound;40</data></li>
       </ul>
-    </div>
+    </article>
 
-    <div class="services__group">
-      <h3>Food intolerance testing <span>FoodPrint&reg; laboratory tests</span></h3>
+    <article class="card">
+      <h3>Food intolerance testing</h3>
+      <p class="card__sub">FoodPrint&reg; laboratory tests</p>
       <ul class="pricelist">
         <li><div><strong>FoodPrint 40+</strong><small>Food-specific IgG antibody test covering over 40 foods.</small></div><data value="199">&pound;199</data></li>
         <li><div><strong>FoodPrint 200+</strong><small>Food-specific IgG antibody test covering over 200 foods.</small></div><data value="349">&pound;349</data></li>
         <li><div><strong>hs-CRP &amp; FoodPrint 200+ bundle</strong><small>FoodPrint 200+ with a high-sensitivity C-reactive protein test.</small></div><data value="389">&pound;389</data></li>
       </ul>
-    </div>
+    </article>
 
-    <div class="services__group services__group--note">
-      <h3>Supplements &amp; body care <span>coming soon</span></h3>
-      <p>Supplement support, alkaline health products, herbs and nutrients, and body care. Coming soon.</p>
+    <article class="card card--soon">
+      <h3>Supplements &amp; body care</h3>
+      <p class="card__sub">Coming soon</p>
+      <p class="card__text">Supplement support, alkaline health products, herbs and nutrients, and body care, to go alongside your consultation.</p>
+      <img src="assets/img/herbs.webp" alt="" width="1000" height="1500" loading="lazy">
+    </article>
     </div>
 
     <div class="services__cta">
