@@ -93,18 +93,18 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 }
 /* Over dark sections (hero, contact, footer) the glass turns smoky so cream text stays readable.
    script.js sets .nav--dark when the nav sits over an element marked data-nav-dark. */
-.nav--scrolled.nav--dark:not(.nav--open)::after {
+.nav--dark:not(.nav--open)::after {
   background: rgba(10, 24, 16, .42);
   border-bottom-color: rgba(240, 236, 226, .12);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 8px 30px -18px rgba(0, 0, 0, .5);
 }
 @supports not (backdrop-filter: blur(1px)) {
   .nav::after { background: rgba(247, 244, 236, .96); }
-  .nav--scrolled.nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
+  .nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
 }
 @media (prefers-reduced-transparency: reduce) {
   .nav::after { background: rgba(247, 244, 236, .96); }
-  .nav--scrolled.nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
+  .nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
 }
 .nav__in {
   width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto;
