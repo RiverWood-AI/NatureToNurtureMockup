@@ -10,6 +10,50 @@ Written 20 Oct 2026 at the end of the mock-up chat. Read this first, then README
 - Repo: https://github.com/RiverWood-AI/NatureToNurtureMockup, branch `main`, clean.
 - Builder: James Killingsworth, RiverWood (jk@riverwoodai.com).
 
+## Agreed in the build call (20 Oct 2026)
+
+James confirmed the site stays roughly as the mock-up (single page, same repo and Pages project). Changes:
+
+1. **New animated hero.** Samantha asked for passion flower, mushrooms (any kind) and wild garlic; she worries flowers plus waterfalls looks too whimsical and left the call to James. Two direction stills in `.raw/hero-v2/`: A, woodland floor without water; B, the stream with the plants on the bank.
+   - Stills went through several rounds (`.raw/hero-v2/`). James chose **oyster-3**: passion flower climbing a hazel shrub (it grows on living shrubs, not stumps), oyster mushrooms on a fallen beech log, wild garlic, stream behind. Out-of-season combinations are fine; plants must grow where they really grow.
+   - It is in as a still for now. A review-only **hero switcher** (bottom-left of the hero, `?hero=1` / `?hero=2`, remembered in localStorage) cycles between the stream video and the stills. Since 20 Oct it has four options: stream video, woodland edge (oyster-3), kitchen table (`.raw/hero-v3/1b-kitchen-cottage-window.png`) and passion flower close-up (`.raw/hero-v3/3-passion-flower-close.png`). Portrait versions of the last two are plain crops; on phones the passion flower sits behind the logo, so it needs its own portrait image if chosen. **Remove the switcher before launch.** Animate oyster-3 later.
+   - Fixed the "pop zoom" she disliked: the poster was scaled 1.06 with a drift animation, the video at 1.0, so the picture jumped when the video faded in. The poster is now unscaled.
+2. **Her photo** replaced with the one she supplied (styled version, cropped).
+3. **Contact form** instead of email only. She gets few emails, mostly calls, and her call screening confuses people. Built: Pages Function + Turnstile + Resend (see README). Needs the Resend key, Turnstile widget and a verified sender.
+4. **Product images.** Waiting to hear which products and where the images come from.
+7. **GutMapDx** (her supplier): logo and a short practitioner-only paragraph added under the service cards, from their info sheet and her email. No prices or test names yet.
+5. Google Business Profile: James is sending her a set-up guide. Add the profile URL to `sameAs` in JSON-LD once it exists.
+6. IONOS: James is emailing her the login link; switch-over by screen share when ready.
+
+## Launch prep done (21 Oct 2026)
+
+- `robots.txt`, `sitemap.xml`, `llms.txt`, canonical, Open Graph / Twitter tags, 1200×630 share image, JSON-LD (HealthAndBeautyBusiness + Person + WebSite, with prices). All use `https://www.naturetonurturenutrition.co.uk/`.
+- `_headers`: CSP (self, Google Fonts, Turnstile only), HSTS, nosniff, no framing, referrer and permissions policies, 30-day asset cache, `noindex` on `*.pages.dev`. Tested locally: video, fonts and Turnstile all work, no console errors.
+- Mobile menu now used up to 900px (the desktop nav wrapped on tablets). Checked 360, 390, 768, 1024, 1280 wide: no sideways scroll.
+- Heading order fixed ("How it works" is now an h2). Food banner, footer logo and hero logo re-encoded smaller.
+
+## Changes from the full call transcript (22 Oct 2026)
+
+- Test prices removed everywhere (page, JSON-LD, llms.txt). Testing card now says it comes as a package with a consultation; ask for options.
+- New "Testing partners" section: GutMapDx (logo) and Cambridge Nutritional Sciences (name only, needs confirming and a logo). No links yet: no reliable official URLs found, ask her.
+- Kitchen and woodland hero stills have a soft background blur baked in (originals in `.raw/`). Woodland is anchored to the top so the mushrooms sit below the buttons on wide screens; the phone crop still puts them near the buttons.
+
+## Polish (22 Oct 2026)
+
+- Section padding reduced (max 6rem, was 8rem). Cards, partner cards and the two photos lift gently on hover (pointer devices only, off for reduced motion).
+- Contact section: deep forest gradient with a faint copper glow, instead of the flat green. Email address removed from view; "Or email instead" link sits beside Send message.
+- Footer: one row on desktop (logo, links, Facebook logo), legal and credit underneath. Official Facebook "f" logo used in contact and footer.
+- Hero logo: stronger layered shadow and a deeper centre shade so it stands out on bright heroes.
+
+## Still to do before go-live
+
+1. Samantha picks the hero; remove the switcher; rebuild `share.jpg` from that hero.
+2. Resend API key, verified sender, real Turnstile site key and secret.
+3. Privacy notice (the form collects personal data) and the quoted terms page: wording from her.
+4. Google Business Profile URL into JSON-LD `sameAs`.
+5. DNS move once IONOS account access is sorted. Update `lastmod` in sitemap.xml at launch.
+6. After launch: submit the sitemap in Google Search Console, test with Google's Rich Results Test and a Facebook share preview.
+
 ## Quoted scope (one-page quote sent)
 
 1. 30-minute design review call before build
@@ -51,7 +95,7 @@ Verified from Nominet WHOIS and live DNS on 15 Oct 2026:
 ## James's preferences (learned the hard way)
 
 - **Verifiable facts only.** Every claim must come from her own site, Facebook or what she tells him. He audits for invented phrasing. Keep the sources table in README.md up to date.
-- No AI-slop tells: no tracked uppercase labels, no icon grids, no gradients, no white buttons, no corny headings.
+- No AI-slop tells: no tracked uppercase labels, no icon grids, no white buttons, no corny headings. Gradients: James asked for one on the contact section (22 Oct 2026), so subtle ones are fine where he asks.
 - **No links to the old Wix site** anywhere.
 - No ping-pong video loops. Calm, slow motion only.
 - No time estimates in replies.

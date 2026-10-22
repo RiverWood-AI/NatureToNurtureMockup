@@ -1,5 +1,11 @@
 {
   "name": "naturetonurture",
   "pages_build_output_dir": ".deploy",
-  "compatibility_date": "2026-09-08"
+  "compatibility_date": "2026-09-08",
+  // Contact form (functions/api/contact.js). Secrets RESEND_API_KEY and TURNSTILE_SECRET are set with
+  // `npx wrangler pages secret put <NAME> --project-name naturetonurture`, never committed.
+  "vars": {
+    "CONTACT_TO": "Samantha@naturetonurturenutrition.co.uk",
+    "CONTACT_FROM": "Nature to Nurture website <website@riverwoodai.com>"
+  }
 }

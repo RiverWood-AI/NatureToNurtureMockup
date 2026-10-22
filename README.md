@@ -17,6 +17,9 @@ assets/logo/        # recoloured logo variants, RiverWood credit logo
 assets/img/         # hero poster frames (placeholders), her photo, CMA badge, three generated section images, favicon
 assets/video/       # hero-landscape.mp4 and hero-portrait.mp4 (Pexels, see below)
 tools/maskloop.py   # builds the water-only crossfade loop from a slowed clip
+functions/api/      # contact form Pages Function (Turnstile + Resend)
+robots.txt, sitemap.xml, llms.txt   # search and AI-assistant discovery, all point at the real domain
+_headers            # security headers (CSP, HSTS, no framing), asset caching, noindex on *.pages.dev
 .raw/               # original logo PNG, Wix clip, Pexels originals, generated image PNGs (gitignored, not deployed)
 ```
 
@@ -63,15 +66,22 @@ business is invented.
 | --- | --- |
 | Strapline "Nurture your body with all that nature has to offer" | Their homepage |
 | Samantha's story, DLN / MCMA, 15 years, children's and pre/post pregnancy interest | Their "Our Story" page |
-| Consultation and FoodPrint prices | Their Services page |
+| Consultation prices | Their Services page. Test prices removed: Samantha asked for no pricing on testing (call, 9 Oct 2026, 13:56) |
 | Email | Their site footer and Facebook page |
 | Webheath, Redditch | Their Facebook page "About" |
 | Facebook link | `https://www.facebook.com/profile.php?id=61579757354575` (45 followers) |
 | Logo | Their site, recoloured for the hero (script and leaf cream, tagline keeps its gold gradient) |
-| Photo and CMA badge | Their "Our Story" page |
+| Photo of Samantha | Supplied by Samantha, 20 Oct 2026 (`.raw/samantha-styled.png`, a styled version of her own photo `.raw/samantha-sushi-original.jpg`), cropped to 4:5 without the logo and text |
+| CMA badge | Their "Our Story" page; Samantha confirmed she may use it as a CMA member |
+| Testing partners section, "tests only through a practitioner, as a package with a consultation" | Call, 9 Oct 2026, 10:30–12:00 and 13:56 |
+| Cambridge Nutritional Sciences as a partner | She called it "a lab in Cambridge"; FoodPrint is their product. Confirm with her, and get a logo |
+| GutMapDx paragraph and logo | GutMapDx's own information sheet and logo, supplied by Samantha (`.raw/gutmapdx-info.png`), plus her email: practitioner-only, not sold direct to consumers |
+| Woodland-edge hero still (`hero-woodland-*.webp`) | AI-generated (OpenAI gpt-image), oyster mushrooms, passion flower, wild garlic. Source `.raw/hero-v2/oyster-3.png` |
 | Flat-lay, food banner, herb jars and desk photos | AI-generated (OpenAI gpt-image) for this mock-up. Not hers. Presented as placeholders for real photography of her practice |
 | "Food-specific IgG antibody test" | What a FoodPrint test is (Cambridge Nutritional Sciences product), not a claim from her site |
 | hs-CRP = high-sensitivity C-reactive protein | Standard name of the test, not from her site |
+| "Worcestershire" in structured data | Geography (Redditch is in Worcestershire), not a claim from her site |
+| Share image `assets/img/share.jpg` | Stream hero poster, darkened, with her recoloured logo. Rebuild from the chosen hero |
 
 ## Things worth telling them
 
@@ -97,3 +107,14 @@ which stages `index.html`, `styles.css`, `script.js` and `assets/` and runs
 `wrangler pages deploy` against `wrangler.jsonc` (project `naturetonurture`, output dir `.deploy`).
 
 Live: https://naturetonurture.pages.dev/
+
+## Contact form
+
+`functions/api/contact.js` is a Cloudflare Pages Function. Wrangler picks up `functions/` from the project root
+when deploying, so it is not copied into `.deploy/`. It checks a honeypot field, verifies Cloudflare Turnstile,
+then emails the enquiry to Samantha through Resend with `reply_to` set to the visitor.
+
+- Vars in `wrangler.jsonc`: `CONTACT_TO` (her inbox), `CONTACT_FROM` (must be on a domain verified in Resend).
+- Secrets, set once and never committed: `npx --yes wrangler@latest pages secret put RESEND_API_KEY --project-name naturetonurture`, same for `TURNSTILE_SECRET`.
+- `index.html` currently carries Cloudflare's **test** Turnstile site key (`1x00000000000000000000AA`). Swap in the real site key when the widget is created.
+- Local testing: copy `.dev.vars.example` to `.dev.vars` (gitignored), stage `.deploy/`, then run the `pages` launch config (`wrangler pages dev` on port 8788).
