@@ -22,7 +22,7 @@ James confirmed the site stays roughly as the mock-up (single page, same repo an
 3. **Contact form** instead of email only. She gets few emails, mostly calls, and her call screening confuses people. Built: Pages Function + Turnstile + Resend (see README). Needs the Resend key, Turnstile widget and a verified sender.
 4. **Product images.** Waiting to hear which products and where the images come from.
 7. **GutMapDx** (her supplier): logo and a short practitioner-only paragraph added under the service cards, from their info sheet and her email. No prices or test names yet.
-5. Google Business Profile: James is sending her a set-up guide. Add the profile URL to `sameAs` in JSON-LD once it exists.
+5. Google Business Profile: not going ahead (22 Oct 2026). She works online only with no premises, and Google's rules exclude online-only businesses.
 6. IONOS: James is emailing her the login link; switch-over by screen share when ready.
 
 ## Launch prep done (21 Oct 2026)
@@ -49,10 +49,9 @@ James confirmed the site stays roughly as the mock-up (single page, same repo an
 
 1. Samantha picks the hero; remove the switcher; rebuild `share.jpg` from that hero.
 2. Resend API key, verified sender, real Turnstile site key and secret.
-3. Privacy notice (the form collects personal data) and the quoted terms page: wording from her.
-4. Google Business Profile URL into JSON-LD `sameAs`.
-5. DNS move once IONOS account access is sorted. Update `lastmod` in sitemap.xml at launch.
-6. After launch: submit the sitemap in Google Search Console, test with Google's Rich Results Test and a Facebook share preview.
+3. Terms page built at `/terms/` (22 Oct 2026) from her old Wix terms, reworded: payment in full at booking, 72 hours' written notice, two reschedules then charged, confidentiality. James will go through it with her. Still open with her: payment method, how long she keeps notes and messages, ICO registration, a privacy notice for the contact form, and whether to keep "no obligation to offer a third date".
+4. DNS move once IONOS account access is sorted. Update `lastmod` in sitemap.xml at launch.
+5. After launch: submit the sitemap in Google Search Console, test with Google's Rich Results Test and a Facebook share preview.
 
 ## Quoted scope (one-page quote sent)
 

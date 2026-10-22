@@ -5,5 +5,5 @@ set -e
 cd "$(dirname "$0")"
 rm -rf .deploy && mkdir -p .deploy
 cp index.html styles.css script.js robots.txt sitemap.xml llms.txt _headers .deploy/
-cp -r assets .deploy/assets
+cp -r assets terms .deploy/
 npx --yes wrangler@latest pages deploy --branch=main --commit-dirty=true

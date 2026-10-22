@@ -7,10 +7,12 @@
 
   // Crossfade the nav from dark glass to cream glass over the first 140px of scroll,
   // and switch to smoky glass while it sits over a dark section
+  // Pages without a hero (e.g. terms) keep the glass nav from the start
   const darkSections = document.querySelectorAll('[data-nav-dark]');
+  const hasHero = !!document.getElementById('hero');
   let ticking = false;
   const paint = () => {
-    const p = Math.min(1, Math.max(0, (window.scrollY - 20) / 140));
+    const p = hasHero ? Math.min(1, Math.max(0, (window.scrollY - 20) / 140)) : 1;
     nav.style.setProperty('--p', p.toFixed(3));
     nav.classList.toggle('nav--scrolled', p > 0.5);
     const mid = nav.offsetHeight / 2;
