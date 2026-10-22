@@ -84,14 +84,28 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 .nav::before, .nav::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 .nav::before { bottom: -70px; background: linear-gradient(180deg, rgba(14, 38, 22, .62) 0%, rgba(14, 38, 22, .32) 50%, rgba(14, 38, 22, 0) 100%); opacity: calc(1 - var(--p)); }
 .nav::after {
-  background: rgba(247, 244, 236, .58); opacity: var(--p);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  backdrop-filter: blur(18px) saturate(150%);
-  border-bottom: 1px solid rgba(31, 74, 46, .12);
-  box-shadow: 0 8px 30px -18px rgba(22, 58, 36, .35);
+  background: rgba(247, 244, 236, .46); opacity: var(--p);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, .35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 8px 30px -18px rgba(22, 58, 36, .35);
+  transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
-@supports not (backdrop-filter: blur(1px)) { .nav::after { background: rgba(247, 244, 236, .96); } }
-@media (prefers-reduced-transparency: reduce) { .nav::after { background: rgba(247, 244, 236, .96); } }
+/* Over dark sections (hero, contact, footer) the glass turns smoky so cream text stays readable.
+   script.js sets .nav--dark when the nav sits over an element marked data-nav-dark. */
+.nav--scrolled.nav--dark:not(.nav--open)::after {
+  background: rgba(10, 24, 16, .42);
+  border-bottom-color: rgba(240, 236, 226, .12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 8px 30px -18px rgba(0, 0, 0, .5);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .nav::after { background: rgba(247, 244, 236, .96); }
+  .nav--scrolled.nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .nav::after { background: rgba(247, 244, 236, .96); }
+  .nav--scrolled.nav--dark:not(.nav--open)::after { background: rgba(10, 24, 16, .96); }
+}
 .nav__in {
   width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -121,6 +135,11 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 .nav--scrolled .nav__word--green { opacity: 1; }
 .nav--scrolled .btn--nav { background: var(--green-700); color: var(--cream); border-color: var(--green-700); }
 .nav--scrolled .btn--nav:hover { background: var(--green-900); box-shadow: 0 0 0 4px rgba(31, 74, 46, .14), 0 10px 24px -8px rgba(22, 58, 36, .5); }
+.nav--scrolled.nav--dark:not(.nav--open) { color: var(--cream); }
+.nav--scrolled.nav--dark:not(.nav--open) .nav__leaf--cream, .nav--scrolled.nav--dark:not(.nav--open) .nav__word--cream { opacity: 1; }
+.nav--scrolled.nav--dark:not(.nav--open) .nav__leaf--green, .nav--scrolled.nav--dark:not(.nav--open) .nav__word--green { opacity: 0; }
+.nav--scrolled.nav--dark:not(.nav--open) .btn--nav { background: var(--sand); color: var(--green-900); border-color: var(--sand); }
+.nav--scrolled.nav--dark:not(.nav--open) .btn--nav:hover { background: #E6CB9C; box-shadow: 0 0 0 4px rgba(217, 188, 140, .28), 0 10px 24px -8px rgba(217, 188, 140, .55); }
 
 .nav__toggle {
   display: none; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer;

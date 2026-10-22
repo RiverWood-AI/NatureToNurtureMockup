@@ -6,12 +6,19 @@
   const pause = document.getElementById('heroPause');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Crossfade the nav from dark glass to cream glass over the first 140px of scroll
+  // Crossfade the nav from dark glass to cream glass over the first 140px of scroll,
+  // and switch to smoky glass while it sits over a dark section
+  const darkSections = document.querySelectorAll('[data-nav-dark]');
   let ticking = false;
   const paint = () => {
     const p = Math.min(1, Math.max(0, (window.scrollY - 20) / 140));
     nav.style.setProperty('--p', p.toFixed(3));
     nav.classList.toggle('nav--scrolled', p > 0.5);
+    const mid = nav.offsetHeight / 2;
+    nav.classList.toggle('nav--dark', [...darkSections].some((el) => {
+      const r = el.getBoundingClientRect();
+      return r.top <= mid && r.bottom >= mid;
+    }));
     ticking = false;
   };
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
