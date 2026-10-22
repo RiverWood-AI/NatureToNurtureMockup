@@ -233,7 +233,8 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 .card .pricelist strong { font-size: 1rem; }
 .card .pricelist small { font-size: .88rem; }
 .card--soon .card__text { color: var(--ink-soft); font-size: 1rem; margin-bottom: 1.4rem; }
-.partners { margin-top: clamp(2.2rem, 4vw, 3.2rem); }
+/* Nested inside Services, so it must not pick up the full section padding */
+.partners { margin-top: clamp(2.2rem, 4vw, 3.2rem); padding-block: 0; }
 .partners h3 { font-size: clamp(1.7rem, 1.3rem + 1.2vw, 2.2rem); margin-bottom: .4rem; }
 .partners__lede { color: var(--ink-soft); max-width: 62ch; margin-bottom: 1.6rem; }
 .partners__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); }
