@@ -74,7 +74,7 @@ business is invented.
 | Photo of Samantha | Supplied by Samantha, 20 Oct 2026 (`.raw/samantha-styled.png`, a styled version of her own photo `.raw/samantha-sushi-original.jpg`), cropped to 4:5 without the logo and text |
 | CMA badge | Their "Our Story" page; Samantha confirmed she may use it as a CMA member |
 | Testing partners section, "tests only through a practitioner, as a package with a consultation" | Call, 9 Oct 2026, 10:30–12:00 and 13:56 |
-| Cambridge Nutritional Sciences as a partner | She called it "a lab in Cambridge"; FoodPrint is their product. Confirm with her, and get a logo |
+| Cambridge Nutritional Sciences (CNSLab) card and logo | cnslab.co.uk home page and FoodPrint page (checked 22 Oct 2026): 35+ years, UK lab in Littleport, Ely, Cambridgeshire, ISO standards. Logo `assets/logo/cnslab.svg` from their site. Note: CNSLab also sells FoodPrint direct to the public, so "practitioner-only" is stated for GutMapDx only |
 | GutMapDx paragraph and logo | GutMapDx's own information sheet and logo, supplied by Samantha (`.raw/gutmapdx-info.png`), plus her email: practitioner-only, not sold direct to consumers |
 | Woodland-edge hero still (`hero-woodland-*.webp`) | AI-generated (OpenAI gpt-image), oyster mushrooms, passion flower, wild garlic. Source `.raw/hero-v2/oyster-3.png` |
 | Flat-lay, food banner, herb jars and desk photos | AI-generated (OpenAI gpt-image) for this mock-up. Not hers. Presented as placeholders for real photography of her practice |

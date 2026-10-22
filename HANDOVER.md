@@ -35,7 +35,7 @@ James confirmed the site stays roughly as the mock-up (single page, same repo an
 ## Changes from the full call transcript (22 Oct 2026)
 
 - Test prices removed everywhere (page, JSON-LD, llms.txt). Testing card now says it comes as a package with a consultation; ask for options.
-- New "Testing partners" section: GutMapDx (logo) and Cambridge Nutritional Sciences (name only, needs confirming and a logo). No links yet: no reliable official URLs found, ask her.
+- New "Testing partners" section: GutMapDx and Cambridge Nutritional Sciences (CNSLab, confirmed by James 22 Oct 2026, logo from cnslab.co.uk). CNSLab sells FoodPrint direct to the public too, so only GutMapDx is described as practitioner-only. No links to partner sites yet.
 - Kitchen and woodland hero stills have a soft background blur baked in (originals in `.raw/`). Woodland is anchored to the top so the mushrooms sit below the buttons on wide screens; the phone crop still puts them near the buttons.
 
 ## Polish (22 Oct 2026)
