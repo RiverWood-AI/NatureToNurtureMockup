@@ -3,7 +3,6 @@
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('menu');
   const video = document.getElementById('heroVideo');
-  const pause = document.getElementById('heroPause');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // Crossfade the nav from dark glass to cream glass over the first 140px of scroll,
@@ -50,7 +49,6 @@
   const switcher = document.getElementById('heroSwitch');
   const switchLabel = document.getElementById('heroSwitchLabel');
   const portrait = window.matchMedia('(orientation: portrait)').matches;
-  let paused = false;
 
   const showHero = (i) => {
     const h = heroes[i];
@@ -61,17 +59,11 @@
 
     video.classList.remove('is-playing');
     video.pause();
-    pause.hidden = true;
     if (!h.video || reduce.matches) { video.removeAttribute('src'); video.load(); return; }
 
     // Poster is the clip's first frame, so the video fades in over it with no jump
-    video.addEventListener('playing', () => {
-      video.classList.add('is-playing');
-      pause.hidden = false;
-    }, { once: true });
+    video.addEventListener('playing', () => video.classList.add('is-playing'), { once: true });
     video.src = portrait ? 'assets/video/hero-portrait.mp4' : 'assets/video/hero-landscape.mp4';
-    paused = false;
-    pause.classList.remove('is-paused');
     video.play().catch(() => {});
   };
 
@@ -87,13 +79,6 @@
       current = (current + 1) % heroes.length;
       try { localStorage.setItem('n2n-hero', String(current)); } catch (e) {}
       showHero(current);
-    });
-
-    pause.addEventListener('click', () => {
-      paused = !paused;
-      paused ? video.pause() : video.play();
-      pause.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
-      pause.classList.toggle('is-paused', paused);
     });
   }
 
