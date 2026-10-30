@@ -47,7 +47,7 @@
   }
 
   // Gentle reveal on section content, once
-  const targets = document.querySelectorAll('.intro .wrap, .about__photo, .about__body, .services__head, .services__group, .steps li, .contact__grid > *');
+  const targets = document.querySelectorAll('.intro .wrap, .about__photo, .about__creds, .about__body, .services__head, .services__group, .steps li, .contact__grid > *');
   if ('IntersectionObserver' in window && !reduce.matches) {
     targets.forEach((el) => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries) => {

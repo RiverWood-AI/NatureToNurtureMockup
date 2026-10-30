@@ -183,7 +183,17 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 
 /* About */
 .about { background: var(--stone); }
-.about__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+/* Desktop: photo with credentials underneath on the left, her story on the right.
+   Mobile: photo, story, then credentials. */
+.about__grid {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 0 clamp(2rem, 6vw, 5rem); align-items: start;
+  grid-template-areas: "photo body" "creds body" "creds cta"; grid-template-rows: auto 1fr auto;
+}
+.about__photo { grid-area: photo; }
+.about__creds { grid-area: creds; }
+.about__body { grid-area: body; }
+.about__cta { grid-area: cta; }
+.about__creds .creds { margin-top: 1.6rem; }
 .about__photo { margin: 0; }
 .about__photo img { border-radius: 4px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
 .about__placeholder {
@@ -200,10 +210,10 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 .about__body h2 { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.2rem); }
 .about__body .about__lead { color: var(--ink); font-size: 1.15rem; }
 .about__quote { margin: 1.6rem 0; padding: .2rem 0 .2rem 1.4rem; border-left: 2px solid var(--copper); }
-.about__quote p { font-family: var(--font-display); font-style: italic; font-size: clamp(1.25rem, 1.05rem + .6vw, 1.5rem); line-height: 1.5; color: var(--ink); }
+.about__quote p { font-family: "Lora", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(1.05rem, .98rem + .3vw, 1.2rem); line-height: 1.75; color: var(--ink); }
 .focus { list-style: none; margin: 1.4rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
 .focus li { font-family: var(--font-ui); font-size: .9rem; letter-spacing: .02em; color: var(--green-700); padding: .35rem .8rem; border: 1px solid rgba(31, 74, 46, .25); border-radius: .9rem .35rem .9rem .35rem; background: rgba(240, 236, 226, .55); }
-.about__body .about__cta { margin-top: 1.8rem; color: var(--ink); font-size: 1.05rem; }
+.about .about__cta { margin: 1.8rem 0 0; color: var(--ink); font-size: 1.05rem; }
 .about__cta .link { margin-left: .4rem; white-space: nowrap; color: var(--green-700); }
 
 /* Full-width food band */
@@ -338,8 +348,10 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .about__grid { grid-template-columns: 1fr; }
+  .about__grid { grid-template-columns: 1fr; grid-template-areas: "photo" "body" "creds" "cta"; grid-template-rows: auto; row-gap: 2rem; }
+  .about .about__cta { margin-top: 0; }
   .about__photo { max-width: 420px; }
+  .about__creds .creds { margin-top: 0; }
   .services__group { grid-template-columns: 1fr; }
   .services__cards { grid-template-columns: 1fr; }
   .how__grid { grid-template-columns: 1fr; }
