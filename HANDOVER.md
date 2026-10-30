@@ -45,9 +45,15 @@ James confirmed the site stays roughly as the mock-up (single page, same repo an
 - Footer: one row on desktop (logo, links, Facebook logo), legal and credit underneath. Official Facebook "f" logo used in contact and footer.
 - Hero logo: stronger layered shadow and a deeper centre shade so it stands out on bright heroes.
 
+## Samantha's feedback (30 Oct 2026)
+
+- Intro and bio replaced with her own copy (email to James). Light fixes only: "Lets" to "Let's", "Food Intolerance's" to "Food Intolerances", and her line "Supporting people of all ages and concerns, but has a specific interest in..." given a subject: "Samantha supports people of all ages and concerns, with a specific interest in...". Bio now says 18 years.
+- Her focus list (gut health, menopause, hormone support, etc.) shown as small tags in the bio and added to JSON-LD `knowsAbout` and llms.txt.
+- "Contact" removed from the top nav (it did the same as "Get in touch"). Footer keeps it.
+
 ## Still to do before go-live
 
-1. Samantha picks the hero; remove the switcher; rebuild `share.jpg` from that hero.
+1. Hero: Samantha chose 3, the kitchen (30 Oct 2026). Switcher removed, `share.jpg` rebuilt from it. Still to do: animate it (tea steam and the curtain moving in a breeze, her request). James is handling the animation separately; when a clip exists, set `data-landscape` / `data-portrait` on `#heroVideo` and the script plays it over the still.
 2. Resend API key, verified sender, real Turnstile site key and secret.
 3. Terms page built at `/terms/` (22 Oct 2026) from her old Wix terms, reworded: payment in full at booking, 72 hours' written notice, two reschedules then charged, confidentiality. James will go through it with her. Still open with her: payment method, how long she keeps notes and messages, ICO registration, a privacy notice for the contact form, and whether to keep "no obligation to offer a third date".
 4. DNS move once IONOS account access is sorted. Update `lastmod` in sitemap.xml at launch.

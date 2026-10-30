@@ -65,7 +65,8 @@ business is invented.
 | Element | Source |
 | --- | --- |
 | Strapline "Nurture your body with all that nature has to offer" | Their homepage |
-| Samantha's story, DLN / MCMA, 15 years, children's and pre/post pregnancy interest | Their "Our Story" page |
+| Intro and bio copy, 18 years, quote, areas of support | Samantha's email to James, 30 Oct 2026 (her wording; light grammar fixes only) |
+| DLN / MCMA credentials | Their "Our Story" page |
 | Consultation prices | Their Services page. Test prices removed: Samantha asked for no pricing on testing (call, 9 Oct 2026, 13:56) |
 | Email | Their site footer and Facebook page |
 | Webheath, Redditch | Their Facebook page "About" |

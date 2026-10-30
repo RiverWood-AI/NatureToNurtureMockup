@@ -37,51 +37,13 @@
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-  // Hero options. Each has portrait and landscape posters; video is optional.
-  // The switcher button is for reviewing options with Samantha and is removed before launch.
-  const heroes = [
-    { name: 'Woodland stream', poster: 'hero-poster', video: true },
-    // Anchored to the top so the mushrooms sit below the buttons on wide screens
-    { name: 'Woodland edge', poster: 'hero-woodland', position: '50% 0%' },
-    { name: 'Kitchen table', poster: 'hero-kitchen' },
-    { name: 'Passion flower', poster: 'hero-passionflower' },
-  ];
-  const posterImg = document.getElementById('heroPoster');
-  const posterSrc = document.getElementById('heroPosterPortrait');
-  const switcher = document.getElementById('heroSwitch');
-  const switchLabel = document.getElementById('heroSwitchLabel');
-  const portrait = window.matchMedia('(orientation: portrait)').matches;
-
-  const showHero = (i) => {
-    const h = heroes[i];
-    posterSrc.srcset = `assets/img/${h.poster}-portrait.webp`;
-    posterImg.src = `assets/img/${h.poster}-landscape.webp`;
-    posterImg.style.objectPosition = h.position || '';
-    switchLabel.innerHTML = `Hero ${i + 1} of ${heroes.length}<span class="hero-switch__name">: ${h.name}</span>`;
-
-    video.classList.remove('is-playing');
-    video.pause();
-    if (!h.video || reduce.matches) { video.removeAttribute('src'); video.load(); return; }
-
-    // Poster is the clip's first frame, so the video fades in over it with no jump
+  // Hero video: optional. The poster shows until a clip is playing; reduced-motion users keep the still.
+  // Set data-landscape and data-portrait on #heroVideo to enable it.
+  if (video && video.dataset.landscape && !reduce.matches) {
+    const portrait = window.matchMedia('(orientation: portrait)').matches;
     video.addEventListener('playing', () => video.classList.add('is-playing'), { once: true });
-    video.src = portrait ? 'assets/video/hero-portrait.mp4' : 'assets/video/hero-landscape.mp4';
+    video.src = portrait ? (video.dataset.portrait || video.dataset.landscape) : video.dataset.landscape;
     video.play().catch(() => {});
-  };
-
-  if (video) {
-    let current = 0;
-    try { current = Math.min(heroes.length - 1, Math.max(0, Number(localStorage.getItem('n2n-hero')) || 0)); } catch (e) {}
-    const fromUrl = Number(new URLSearchParams(location.search).get('hero'));
-    if (fromUrl >= 1 && fromUrl <= heroes.length) current = fromUrl - 1;
-    showHero(current);
-
-    switcher.hidden = false;
-    switcher.addEventListener('click', () => {
-      current = (current + 1) % heroes.length;
-      try { localStorage.setItem('n2n-hero', String(current)); } catch (e) {}
-      showHero(current);
-    });
   }
 
   // Gentle reveal on section content, once

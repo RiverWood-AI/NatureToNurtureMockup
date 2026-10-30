@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nature to Nurture Nutrition &amp; Recovery | Living Nutrition Practitioner, Online Consultations</title>
-<meta name="description" content="Personalised nutrition and recovery support from a qualified Living Nutrition Practitioner, with online video consultations across the UK. Food intolerance and gut health testing, and children's and pre/post pregnancy nutrition.">
+<meta name="description" content="Personalised nutrition and recovery support from a qualified Living Nutrition Practitioner, with online video consultations across the UK. Gut health, immune support, menopause and hormones, food intolerances, pregnancy and children's nutrition.">
 <link rel="canonical" href="https://www.naturetonurturenutrition.co.uk/">
 <meta name="theme-color" content="#1F4A2E">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://www.naturetonurturenutrition.co.uk/assets/img/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nature to Nurture, Nutrition &amp; Recovery logo over a woodland stream">
+<meta property="og:image:alt" content="Nature to Nurture, Nutrition &amp; Recovery logo over a sunlit kitchen table with herbs and oyster mushrooms">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nature to Nurture Nutrition &amp; Recovery">
 <meta name="twitter:description" content="Personalised nutrition, rooted in nature. Online consultations with a Living Nutrition Practitioner, across the UK.">
@@ -34,7 +34,7 @@
       "url": "https://www.naturetonurturenutrition.co.uk/",
       "logo": "https://www.naturetonurturenutrition.co.uk/assets/logo/logo-colour.png",
       "image": "https://www.naturetonurturenutrition.co.uk/assets/img/share.jpg",
-      "description": "Personalised nutrition and recovery support from a qualified Living Nutrition Practitioner. Consultations are held online.",
+      "description": "Supporting your journey towards better wellbeing through personalised nutrition, natural health insights and practical lifestyle guidance. Consultations are personalised and held online.",
       "email": "Samantha@naturetonurturenutrition.co.uk",
       "address": { "@type": "PostalAddress", "addressLocality": "Redditch", "addressRegion": "Worcestershire", "addressCountry": "GB" },
       "areaServed": { "@type": "Country", "name": "United Kingdom" },
@@ -61,7 +61,8 @@
       "image": "https://www.naturetonurturenutrition.co.uk/assets/img/samantha.webp",
       "worksFor": { "@id": "https://www.naturetonurturenutrition.co.uk/#business" },
       "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "Diploma in Living Nutrition (DLN)", "recognizedBy": { "@type": "Organization", "name": "College of Living Nutrition" } },
-      "memberOf": { "@type": "Organization", "name": "The Complementary Medical Association" }
+      "memberOf": { "@type": "Organization", "name": "The Complementary Medical Association" },
+      "knowsAbout": ["Gut health", "Immune support", "Menopause", "Hormone support", "Food intolerances", "Pregnancy nutrition", "Children's nutrition", "Holistic nutrition", "Natural health", "Living nutrition"]
     },
     {
       "@type": "WebSite",
@@ -97,7 +98,6 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#how">How it works</a>
-      <a href="#contact">Contact</a>
       <a class="btn btn--nav" href="#contact">Get in touch</a>
     </nav>
     <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
@@ -111,9 +111,10 @@
 <section class="hero" id="hero" data-nav-dark>
   <div class="hero__media" aria-hidden="true">
     <picture class="hero__poster">
-      <source id="heroPosterPortrait" media="(orientation: portrait)" srcset="assets/img/hero-poster-portrait.webp">
-      <img id="heroPoster" src="assets/img/hero-poster-landscape.webp" alt="" width="1920" height="1080" fetchpriority="high">
+      <source media="(orientation: portrait)" srcset="assets/img/hero-kitchen-portrait.webp">
+      <img src="assets/img/hero-kitchen-landscape.webp" alt="" width="1536" height="1024" fetchpriority="high">
     </picture>
+    <!-- Add data-landscape and data-portrait video paths here once the animated version is ready -->
     <video class="hero__video" id="heroVideo" muted playsinline loop preload="metadata" tabindex="-1"></video>
   </div>
   <div class="hero__scrim"></div>
@@ -126,19 +127,15 @@
     </div>
   </div>
 
-  <!-- Review-only: lets Samantha compare hero options. Remove before launch. -->
-  <button class="hero-switch" id="heroSwitch" type="button" hidden>
-    <span id="heroSwitchLabel">Hero 1 of 4</span>
-    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg>
-  </button>
   <a class="hero__scroll" href="#intro" aria-label="Scroll down"><span></span></a>
 </section>
 
 <section class="intro" id="intro">
   <div class="wrap wrap--narrow">
-    <p class="eyebrow">Personalised nutrition, rooted in nature</p>
+    <p class="eyebrow">Personalised nutrition, rooted in nature.</p>
+    <p class="intro__lede">Supporting your journey towards better wellbeing through personalised nutrition, natural health insights and practical lifestyle guidance.</p>
     <h1 class="intro__title">Nurture your body with all that nature has to offer.</h1>
-    <p class="intro__text">Whether you are exploring an alkaline diet, addressing food intolerances or looking to support your immune system, the approach is the same: find the root cause, then support it with living nutrition and herbal supplements. Consultations are personalised and held online.</p>
+    <p class="intro__text">Whether you are looking to explore an alkaline diet, address food intolerances, or looking to support your gut and strengthen your immune system, our approach will always be to support with living nutrition and herbal supplements. Consultations are personalised and held online.</p>
   </div>
   <div class="wrap intro__figure">
     <img src="assets/img/flatlay.webp" alt="Fresh basil, rosemary, thyme, spinach, mint, avocado, lemon and a bowl of seeds on a stone surface" width="1600" height="1067" loading="lazy">
@@ -151,17 +148,22 @@
       <img src="assets/img/samantha.webp" alt="Samantha, Living Nutrition Practitioner" width="900" height="1125" loading="lazy">
     </figure>
     <div class="about__body">
-      <p class="eyebrow">Meet Samantha</p>
-      <h2>Fifteen years in wellness, and a mum who has been through it herself.</h2>
-      <p>I am a qualified Living Nutrition Practitioner with over fifteen years in the wellness industry. I support people of all ages, and I have a particular interest in children's nutrition and nutrition before, during and after pregnancy.</p>
-      <p>That interest is personal. I became a mother in May 2020 and experienced first-hand how hard it is for new mums to fit in time for their own health. When my son was unsettled and uncomfortable, and I was told it was "just colic" that he would grow out of, I used my training to find the root cause and improve his symptoms.</p>
-      <p>Whatever you or your child are facing, I recommend booking a 15-minute consultation first, and we can discuss any tests or further support needed.</p>
+      <h2>Meet the person behind Nature to Nurture Nutrition &amp; Recovery.</h2>
+      <p class="about__lead">Samantha has over 18 years in the wellness industry, driven by her own real life experience.</p>
+      <blockquote class="about__quote">
+        <p>&ldquo;I became a mother in May 2020 and experienced first-hand when my son was unsettled and uncomfortable from birth. I was told it was &lsquo;just colic&rsquo; that he would grow out of, but when things kept getting worse, I knew I had to trust my gut. I used my keen interest in living nutrition to find the root cause and improve his symptoms almost overnight. This personal experience guided me to study with the College of Living Nutrition, to help others explore a more holistic approach to health.&rdquo;</p>
+      </blockquote>
+      <p>Samantha supports people of all ages and concerns, with a specific interest in children&rsquo;s nutrition, as well as nutrition before, during and after pregnancy.</p>
+      <ul class="focus" aria-label="Areas of support">
+        <li>Gut Health</li><li>Immune Boosting</li><li>Menopause</li><li>Hormone Support</li><li>Food Intolerances</li><li>Pregnancy</li><li>Children&rsquo;s Nutrition</li><li>Holistic Nutrition</li><li>Natural Health</li>
+      </ul>
       <ul class="creds">
         <li><strong>DLN</strong> Diploma, College of Living Nutrition</li>
         <li><strong>MCMA</strong> Registered member, The Complementary Medical Association</li>
-        <li><strong>15+ years</strong> in the wellness industry</li>
+        <li><strong>18+ years</strong> in the wellness industry</li>
       </ul>
       <img class="about__badge" src="assets/img/cma-badge.webp" alt="Registered member, The Complementary Medical Association" width="320" height="185" loading="lazy">
+      <p class="about__cta">Let&rsquo;s start a conversation about your goals, and take the first step towards a more nourished you. <a class="link" href="#contact">Get in touch</a></p>
     </div>
   </div>
 </section>
