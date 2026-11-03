@@ -184,12 +184,13 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 
 /* About */
 .about { background: var(--stone); }
-/* Desktop: photo with credentials underneath on the left, her story on the right.
-   Mobile: photo, story, then credentials. */
+/* Desktop: photo with credentials underneath on the left, heading and her story on the right.
+   Mobile: heading, photo, story, then credentials. */
 .about__grid {
   display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 0 clamp(2rem, 6vw, 5rem); align-items: start;
-  grid-template-areas: "photo body" "creds body" "creds cta"; grid-template-rows: auto 1fr auto;
+  grid-template-areas: "photo head" "photo body" "creds body" "creds cta"; grid-template-rows: auto auto 1fr auto;
 }
+.about__title { grid-area: head; }
 .about__photo { grid-area: photo; }
 .about__creds { grid-area: creds; }
 .about__body { grid-area: body; }
@@ -208,7 +209,7 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 .creds li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--copper); }
 .creds strong { color: var(--ink); font-weight: 600; }
 .about__badge { width: 120px; margin-top: 1.6rem; border-radius: 4px; }
-.about__body h2 { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.2rem); }
+.about__title { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.2rem); }
 .about__body .about__lead { color: var(--ink); font-size: 1.15rem; }
 .about__quote { margin: 1.6rem 0; padding: .2rem 0 .2rem 1.4rem; border-left: 2px solid var(--copper); }
 .about__quote p { font-family: "Lora", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(1.05rem, .98rem + .3vw, 1.2rem); line-height: 1.75; color: var(--ink); }
@@ -351,7 +352,8 @@ section { padding-block: clamp(3.5rem, 4vw + 1.75rem, 6rem); }
 @media (max-width: 900px) {
   /* Phones and tablets: one tidy column. Square photo, smaller tags,
      credentials grouped in a card, and the call to action on its own line. */
-  .about__grid { grid-template-columns: 1fr; grid-template-areas: "photo" "body" "creds" "cta"; grid-template-rows: auto; row-gap: 1.8rem; }
+  .about__grid { grid-template-columns: 1fr; grid-template-areas: "head" "photo" "body" "creds" "cta"; grid-template-rows: auto; row-gap: 1.8rem; }
+  .about__title { margin-bottom: 0; }
   .about__photo { max-width: 420px; }
   .about__photo img { aspect-ratio: 1 / 1; object-position: 50% 22%; }
   .about__quote { margin: 1.3rem 0; padding-left: 1rem; }
